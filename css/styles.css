@@ -1,24 +1,26 @@
 /* ============================================================
    THE JUNK TRUCK — Kansas City, MO
-   Design System
-   Palette: Deep Charcoal + Safety Orange + Off-white
+   Design System — matches the truck wrap
+   Palette: Deep Navy + Aqua Teal + Off-white
 ============================================================ */
 
 :root {
-  /* Colors */
-  --ink: #141820;            /* near-black charcoal */
-  --ink-2: #1e242e;
-  --navy: #0f1f3d;
+  /* Colors — match truck wrap (deep navy + aqua teal glow) */
+  --ink: #0a1628;            /* truck wrap base navy */
+  --ink-2: #14213a;
+  --navy: #1d2358;           /* logo deep navy/indigo */
   --cream: #f7f3ec;          /* off-white paper */
-  --bone: #ede7db;
-  --rule: #2a3140;
-  --orange: #ff6b1a;         /* safety-orange accent */
-  --orange-2: #ff8a3d;
-  --orange-deep: #d14d08;
-  --yellow: #ffc53a;         /* high-vis accent */
-  --green: #0f7a4b;
-  --muted: #6b7380;
-  --muted-light: #aab2bf;
+  --bone: #e8efee;           /* very faint teal-tinted bone */
+  --rule: #233052;
+  --orange: #5ec8be;         /* PRIMARY teal — replaces former safety-orange role */
+  --orange-2: #6dd5cb;       /* lighter aqua teal */
+  --orange-deep: #2da498;    /* deep teal */
+  --yellow: #ffd45e;         /* warm accent retained */
+  --green: #1d4944;           /* deep teal-green for icons */
+  --teal: #5ec8be;           /* explicit teal alias */
+  --teal-glow: #40c8d0;      /* cyan glow accent */
+  --muted: #5a6678;
+  --muted-light: #98a3b5;
 
   /* Type */
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
