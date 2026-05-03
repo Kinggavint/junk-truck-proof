@@ -209,6 +209,21 @@ em { font-style: italic; }
 }
 .brand { display: flex; align-items: center; gap: var(--s-3); }
 .brand svg { width: 44px; height: 44px; }
+.brand-logo {
+  display: block;
+  height: 56px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+.footer-brand .brand-logo {
+  height: 72px;
+  max-width: 280px;
+  filter: drop-shadow(0 4px 16px rgba(94,200,190,0.25));
+}
+@media (max-width: 720px) {
+  .brand-logo { height: 44px; max-width: 170px; }
+}
 .brand-text {
   font-family: var(--display);
   font-size: 1.15rem;
