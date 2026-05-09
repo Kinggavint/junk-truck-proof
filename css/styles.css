@@ -247,11 +247,12 @@ em { font-style: italic; }
   color: var(--ink);
 }
 .nav-links a.active { color: var(--orange); }
-.nav-cta { display: none; }
+.nav-cta { display: none; gap: 0.625rem; align-items: center; }
 
 @media (min-width: 960px) {
   .nav-links, .nav-cta { display: flex; }
 }
+.nav-cta .btn-outline { white-space: nowrap; }
 
 .nav-toggle {
   display: flex;
