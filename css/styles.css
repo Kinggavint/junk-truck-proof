@@ -734,3 +734,7 @@ em { font-style: italic; }
   z-index: 100;
 }
 .skip-link:focus { top: 0; }
+
+/* Reviews */
+.reviews-embed{margin-top:16px;}
+.fineprint{font-size:0.95rem; opacity:.9; margin-top:12px;}
