@@ -737,4 +737,11 @@ em { font-style: italic; }
 
 /* Reviews */
 .reviews-embed{margin-top:16px;}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-4);}
+.review-card{background:var(--bone);border:1px solid rgba(10,20,30,.08);border-radius:16px;padding:var(--s-5);box-shadow:0 10px 22px rgba(10,20,30,.06);}
+.review-card .stars{color:var(--orange);font-weight:900;letter-spacing:.08em;margin-bottom:10px;font-size:1rem;}
+.review-card .quote{margin:0 0 10px;line-height:1.6;}
+.review-card .meta{margin:0;color:var(--muted);font-weight:700;font-size:.95rem;}
+@media (max-width: 900px){.reviews-grid{grid-template-columns:1fr;}}
+
 .fineprint{font-size:0.95rem; opacity:.9; margin-top:12px;}
