@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book a Pickup — Free Quote | The Junk Truck Kansas City</title>
   <meta name="description" content="Schedule your junk removal pickup in the Kansas City metro. Free, no-obligation quotes. Same-day service often available.">
-  <link rel="canonical" href="https://kinggavint.github.io/junk-truck-proof/book.html">
+  <link rel="canonical" href="book.html">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Book a Pickup — Free Quote | The Junk Truck Kansas City">
@@ -35,7 +35,7 @@
   
 </head>
 <body>
-<a href="#main" class="skip-link">Skip to main content</a>
+<a href="book.html#main" class="skip-link">Skip to main content</a>
 <header class="site-header">
   <div class="container">
     <div class="nav">
@@ -122,8 +122,9 @@
         </div>
       </div>
 
-      <form class="booking-form" onsubmit="event.preventDefault(); this.querySelector('.form-confirm').style.display='block'; this.querySelector('.form-fields').style.display='none';" aria-label="Junk removal booking form">
+      <form id="jt-booking-form" class="booking-form" action="https://rlwfhxghcb.execute-api.us-east-2.amazonaws.com/contact" method="post" onsubmit="event.preventDefault(); sendJunkTruckForm(this);" aria-label="Junk removal booking form">
         <h3 style="text-transform: none; font-family: var(--sans); letter-spacing: 0; font-size: 1.5rem; margin-bottom: var(--s-5);">Request a free quote</h3>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;opacity:0;pointer-events:none;">
         <div class="form-fields">
           <div class="form-row two">
             <div class="field">
@@ -177,23 +178,8 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="field upload">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-              <div style="font-weight: 700; color: var(--ink); margin-bottom: 4px;">Add photos (optional)</div>
-              <div style="font-size: 0.85rem;">Photos help us give a better quote. Tap a button below to snap or upload from your phone.</div>
-              <div class="upload-buttons" style="display:flex; flex-wrap:wrap; gap: var(--s-3); margin-top: var(--s-3);">
-                <label class="btn btn-outline" style="cursor:pointer; min-height:48px; display:inline-flex; align-items:center; justify-content:center;">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;margin-right:6px;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                  Take photo
-                  <input type="file" name="photos" accept="image/*" capture="environment" multiple style="position:absolute; opacity:0; pointer-events:none; width:1px; height:1px;">
-                </label>
-                <label class="btn btn-outline" style="cursor:pointer; min-height:48px; display:inline-flex; align-items:center; justify-content:center;">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;margin-right:6px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                  Upload from device
-                  <input type="file" name="photos_library" accept="image/*" multiple style="position:absolute; opacity:0; pointer-events:none; width:1px; height:1px;">
-                </label>
-              </div>
-              <p class="hint" style="margin-top: var(--s-2); font-size: 0.8rem;">Works great on iPhone and Android. JPG, PNG, or HEIC accepted.</p>
+            <div class="field" style="padding: var(--s-3); background: rgba(0,0,0,0.03); border-radius: 8px;">
+              <p style="margin: 0; font-size: 0.9rem; color: var(--muted);"><strong>Have photos?</strong> After you send this form, text or email them to (816) 298-9995 or <a href="mailto:contact@junktruck123.com">contact@junktruck123.com</a> for a faster quote.</p>
             </div>
           </div>
           <div class="form-row">
@@ -203,14 +189,83 @@
             </label>
           </div>
           <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">Request Free Quote</button>
-          <p class="hint" style="margin-top: var(--s-3); text-align: center;">By submitting, you agree to be contacted about your pickup. We'll never share your info.</p>
+          <p id="jt-form-note" role="status" aria-live="polite" style="margin-top: var(--s-3); text-align: center; font-size: 0.9rem; color: var(--muted);">By submitting, you agree to be contacted about your pickup. We'll never share your info.</p>
         </div>
         <div class="form-confirm" style="display:none; text-align:center; padding: var(--s-5) 0;">
           <div style="width: 64px; height: 64px; background: var(--orange); border-radius: 50%; margin: 0 auto var(--s-4); display: flex; align-items: center; justify-content: center; color: #fff;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <h3 style="font-family: var(--sans); text-transform: none; letter-spacing: 0; font-size: 1.5rem;">Request received.</h3>
-          <p style="color: var(--muted);">Thanks! We'll get back to you within a few hours. Check your phone and email for our reply.</p>
+          <p style="color: var(--muted);">Thanks. We'll get back to you within a few hours. Check your phone and email for our reply.</p>
         </div>
       </form>
+      <script>
+        function sendJunkTruckForm(form) {
+          var fullName = (form.querySelector('#f-name').value || '').trim();
+          var parts = fullName.split(/\s+/);
+          var firstName = parts.shift() || '';
+          var lastName = parts.join(' ');
+          var phone = form.querySelector('#f-phone').value.trim();
+          var email = form.querySelector('#f-email').value.trim();
+          var address = form.querySelector('#f-address').value.trim();
+          var serviceSelect = form.querySelector('#f-service');
+          var serviceLabel = serviceSelect.options[serviceSelect.selectedIndex] ? serviceSelect.options[serviceSelect.selectedIndex].text : '';
+          var preferredDate = form.querySelector('#f-date').value.trim();
+          var description = form.querySelector('#f-desc').value.trim();
+          var urgent = form.querySelector('input[name="urgent"]').checked;
+          var honeypot = form.querySelector('input[name="website"]').value;
+
+          var submitBtn = form.querySelector('button[type="submit"]');
+          var note = form.querySelector('#jt-form-note');
+          var fields = form.querySelector('.form-fields');
+          var confirmBlock = form.querySelector('.form-confirm');
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+          note.style.color = 'var(--muted)';
+          note.textContent = '';
+
+          var messageBody = description;
+          if (preferredDate) { messageBody += '\n\nPreferred date: ' + preferredDate; }
+          if (urgent) { messageBody += '\n\nURGENT - needs pickup within 24 hours.'; }
+
+          var payload = {
+            client: 'junktruck',
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            phone: phone,
+            reason: serviceLabel,
+            message: messageBody,
+            pickup_address: address,
+            urgent: urgent ? 'yes' : 'no',
+            website: honeypot
+          };
+
+          fetch(form.action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          })
+            .then(function (res) { return res.json().catch(function () { return { ok: res.ok }; }); })
+            .then(function (data) {
+              if (data && data.ok) {
+                form.reset();
+                fields.style.display = 'none';
+                confirmBlock.style.display = 'block';
+              } else {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Request Free Quote';
+                note.style.color = '#b00020';
+                note.textContent = 'Sorry, something went wrong. Please call or text (816) 298-9995 or email contact@junktruck123.com and we will take care of you.';
+              }
+            })
+            .catch(function () {
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Request Free Quote';
+              note.style.color = '#b00020';
+              note.textContent = 'Sorry, we could not reach our system. Please call or text (816) 298-9995 or email contact@junktruck123.com and we will take care of you.';
+            });
+        }
+      </script>
     </div>
   </div>
 </section>
