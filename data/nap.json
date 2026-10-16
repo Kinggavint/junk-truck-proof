@@ -1,0 +1,9 @@
+{
+  "_comment": "Single source of truth for The Junk Truck phone (matches Google Business Profile and knowledge base current_state.md).",
+  "name": "The Junk Truck",
+  "phones": [
+    {"label": "Main", "display": "(816) 298-9995", "e164": "+18162989995"}
+  ],
+  "other_allowed_tel": [],
+  "banned_numbers": []
+}

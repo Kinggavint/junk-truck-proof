@@ -438,7 +438,7 @@ def page_home():
       "name": "The Junk Truck",
       "description": "Locally owned junk removal and hauling company serving the Kansas City metro.",
       "url": "{SITE['url']}",
-      "telephone": "",
+      "telephone": "+1-816-298-9995",
       "priceRange": "$$",
       "image": "{SITE['url']}/assets/images/hero-truck.webp",
       "address": {{
